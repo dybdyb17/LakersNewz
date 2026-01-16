@@ -379,3 +379,22 @@ body.dark-mode .news-section {
     min-width: 180px;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .top-logo {
+    display: none;
+  }
+
+  .topbar {
+    justify-content: flex-start;
+  }
+
+  .top-links {
+    gap: 6px;
+  }
+
+  .top-links .btn {
+    padding: 4px 10px;
+    font-size: 12px;
+  }
+}
