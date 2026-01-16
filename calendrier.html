@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lakers News</title>
+  <link href="./assets/fonts/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+  <link href="./assets/fonts/fontawesome/css/brands.min.css" rel="stylesheet">
+  <link href="./assets/fonts/fontawesome/css/solid.css" rel="stylesheet">
+  <link href="./assets/fonts/fontawesome/css/solid.min.css" rel="stylesheet">
+  <link rel="shortcut icon" href="./assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/schedule.css">
+</head>
+<body class="calendrier-page">
+  
+  <header class="topbar">
+    <div class="top-links">
+      <a href="https://www.ticketmaster.com/los-angeles-lakers-tickets/artist/805962" class="btn btn-gold">Billeterie</a>
+      <a href="https://www.nbastore.eu/fr/los-angeles-lakers/t-25031846+z-9030758-2040509788" class="btn btn-purple">#Boutique</a>
+      <a href="https://www.youtube.com/c/LakeShowHighlights" class="btn btn-black">#Lakeshow</a>
+    </div>
+
+    <div class="top-logo">
+      <a href="index.html">
+        <img src="./assets/img/fontbolt.png" width="130" height="40" alt="Lakers Newz">
+      </a>
+    </div>
+
+    <div class="top-actions">
+      <button class="search-btn" aria-label="Rechercher">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+      
+      <div class="settings-dropdown">
+        <button class="settings-btn" aria-label="Réglages">
+          <i class="fa-solid fa-gear"></i>
+        </button>
+        
+        <div class="dropdown-menu">
+          <button class="dropdown-item theme-toggle" data-theme="dark">
+            <i class="fa-solid fa-moon"></i>
+            <span>Mode sombre</span>
+          </button>
+          <button class="dropdown-item theme-toggle" data-theme="light">
+            <i class="fa-solid fa-sun"></i>
+            <span>Mode clair</span>
+          </button>
+          <div class="dropdown-divider"></div>
+          <a href="contact.html" class="dropdown-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>Contact</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <button class="burger-btn" aria-label="Ouvrir le menu">
+    <i class="fa-regular fa-bars"></i>
+  </button>
+
+  <aside class="sidebar" aria-label="Navigation latérale">
+    <button class="close-btn" aria-label="Fermer le menu">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html"><i class="fa-solid fa-basketball"></i>News</a></li>
+        <li><a class="active" href="calendrier.html"><i class="fa-solid fa-calendar"></i>Calendrier</a></li>
+        <li><a href="classement.html"><i class="fa-solid fa-ranking-star"></i>Classement</a></li>
+        <li><a href="roster.html"><i class="fa-solid fa-star"></i>Roster</a></li>
+        <li><a href="paris.html"><i class="fa-solid fa-dice"></i>Paris</a></li>
+      </ul>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="index.html" class="footer-logo">
+        <img src="./assets/img/Los_Angeles_Lakers_logo.svg.png" alt="Logo Lakers">
+      </a>
+    </div>
+  </aside>
+
+  <main class="calendar-main">
+    <section class="calendar-hero">
+      <div class="calendar-hero__overlay">
+        <span class="calendar-hero__label"><i class="fa-solid fa-calendar"></i> Calendrier NBA</span>
+        <h1>Lakers 2025/2026</h1>
+        <p>Retrouver les 82 matchs de la saison régulière des Los Angeles Lakers.</p>
+      </div>
+    </section>
+
+    <section class="calendar-card">
+      <header class="calendar-card__header">
+        <div>
+          <h2>Programme de la saison</h2>
+          <p class="calendar-card__subtitle">Du 22 octobre 2025 au 13 avril 2026</p>
+        </div>
+        <div class="calendar-filters" aria-label="Filtres du calendrier">
+          <label class="filter">
+            <span>Mois</span>
+            <select name="month" id="month-filter">
+              <option value="all">Tous</option>
+              <option value="octobre">Octobre</option>
+              <option value="novembre">Novembre</option>
+              <option value="decembre">Décembre</option>
+              <option value="janvier">Janvier</option>
+              <option value="fevrier">Février</option>
+              <option value="mars">Mars</option>
+              <option value="avril">Avril</option>
+            </select>
+          </label>
+        </div>
+      </header>
+
+      <div class="calendar-table__wrapper">
+        <table class="calendar-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Heure (PT)</th>
+              <th>Adversaire</th>
+              <th>Lieu</th>
+              <th>Résultat</th>
+            </tr>
+          </thead>
+          <tbody>
+        
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-menu">
+      <div class="fan-logo">
+        <img src="./assets/img/fontbolt.png" alt="logo lakenewz">
+      </div>
+      <div class="columns">
+        <div class="col">
+          <a href="#">À propos</a>
+          <a href="#">Newsletter quotidienne</a>
+          <a href="#">Politique des cookies</a>
+          <a href="#">Gérer mes préférences</a>
+        </div>
+        <div class="col">
+          <a href="#">Offres d'emploi</a>
+          <a href="#">Proposer un article</a>
+          <a href="#">Avertissement légal</a>
+        </div>
+        <div class="col">
+          <a href="#">Contact</a>
+          <a href="#">Politique de confidentialité</a>
+          <a href="#">Déclaration d'accessibilité</a>
+        </div>
+        <div class="col">
+          <a href="#">mon site</a>
+          <a href="#">Conditions d'utilisation</a>
+          <a href="#">mentions légales</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Minute Media — Tous droits réservés. Le contenu de ce site est destiné au divertissement et à l'information.</p>
+    </div>
+  </footer>
+
+  <script src="./script/script.js"></script>
+  
+</body>
+</html>

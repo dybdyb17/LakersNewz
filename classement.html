@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classement NBA 2025/2026</title>
+  <link href="./assets/fonts/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+  <link href="./assets/fonts/fontawesome/css/brands.min.css" rel="stylesheet">
+  <link href="./assets/fonts/fontawesome/css/solid.css" rel="stylesheet">
+  <link href="./assets/fonts/fontawesome/css/solid.min.css" rel="stylesheet">
+  <link rel="shortcut icon" href="./assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/standing.css">
+</head>
+
+<body class="classement-page">
+  
+  <header class="topbar">
+    <div class="top-links">
+      <a href="https://www.ticketmaster.com/los-angeles-lakers-tickets/artist/805962" class="btn btn-gold">Billeterie</a>
+      <a href="https://www.nbastore.eu/fr/los-angeles-lakers/t-25031846+z-9030758-2040509788" class="btn btn-purple">#Boutique</a>
+      <a href="https://www.youtube.com/c/LakeShowHighlights" class="btn btn-black">#Lakeshow</a>
+    </div>
+
+    <div class="top-logo">
+      <a href="index.html">
+        <img src="./assets/img/fontbolt.png" width="130" height="40" alt="Lakers Newz">
+      </a>
+    </div>
+
+    <div class="top-actions">
+      <button class="search-btn" aria-label="Rechercher">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+      
+      <div class="settings-dropdown">
+        <button class="settings-btn" aria-label="Réglages">
+          <i class="fa-solid fa-gear"></i>
+        </button>
+        
+        <div class="dropdown-menu">
+          <button class="dropdown-item theme-toggle" data-theme="dark">
+            <i class="fa-solid fa-moon"></i>
+            <span>Mode sombre</span>
+          </button>
+          <button class="dropdown-item theme-toggle" data-theme="light">
+            <i class="fa-solid fa-sun"></i>
+            <span>Mode clair</span>
+          </button>
+          <div class="dropdown-divider"></div>
+          <a href="contact.html" class="dropdown-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>Contact</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <button class="burger-btn" aria-label="Ouvrir le menu">
+    <i class="fa-regular fa-bars"></i>
+  </button>
+
+  <aside class="sidebar" aria-label="Navigation latérale">
+    <button class="close-btn" aria-label="Fermer le menu">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html"><i class="fa-solid fa-basketball"></i>News</a></li>
+        <li><a href="calendrier.html"><i class="fa-solid fa-calendar"></i>Calendrier</a></li>
+        <li><a class="active" href="classement.html"><i class="fa-solid fa-ranking-star"></i>Classement</a></li>
+        <li><a href="roster.html"><i class="fa-solid fa-star"></i>Roster</a></li>
+        <li><a href="paris.html"><i class="fa-solid fa-dice"></i>Paris</a></li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-footer">
+      <a href="index.html" class="footer-logo">
+        <img src="./assets/img/Los_Angeles_Lakers_logo.svg.png" alt="Logo Lakers">
+      </a>
+    </div>
+  </aside>
+
+  <main class="classement-main">
+    <section class="classement-card">
+      <h1>Classement NBA 2025/2026</h1>
+
+      <div class="conference-filters">
+        <button class="conf-btn active" data-conf="all">
+          <i class="fa-solid fa-trophy"></i> Toutes les équipes
+        </button>
+        <button class="conf-btn" data-conf="west">
+          <i class="fa-solid fa-mountain-sun"></i> Conférence Ouest
+        </button>
+        <button class="conf-btn" data-conf="east">
+          <i class="fa-solid fa-building"></i> Conférence Est
+        </button>
+      </div>
+
+      <div id="standings-error" class="error-message"></div>
+
+      <div class="classement-table__wrapper">
+        <table class="standings-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Équipe</th>
+              <th>W</th>
+              <th>L</th>
+              <th>PCT</th>
+              <th>GB</th>
+              <th>HOME</th>
+              <th>AWAY</th>
+              <th>PPG</th>
+              <th>OPP PPG</th>
+              <th>DIFF</th>
+              <th>STRK</th>
+              <th>L10</th>
+            </tr>
+          </thead>
+          <tbody id="nba-standings-body">
+            <tr class="loading-row">
+              <td colspan="13">
+                <div class="loading-spinner">
+                  <i class="fa-solid fa-spinner fa-spin"></i>
+                  <p>Chargement du classement...</p>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-menu">
+      <div class="fan-logo">
+        <img src="./assets/img/fontbolt.png" alt="logo lakenewz">
+      </div>
+      <div class="columns">
+        <div class="col">
+          <a href="#">À propos</a>
+          <a href="#">Newsletter quotidienne</a>
+          <a href="#">Politique des cookies</a>
+          <a href="#">Gérer mes préférences</a>
+        </div>
+        <div class="col">
+          <a href="#">Offres d'emploi</a>
+          <a href="#">Proposer un article</a>
+          <a href="#">Avertissement légal</a>
+        </div>
+        <div class="col">
+          <a href="#">Contact</a>
+          <a href="#">Politique de confidentialité</a>
+          <a href="#">Déclaration d'accessibilité</a>
+        </div>
+        <div class="col">
+          <a href="#">mon site</a>
+          <a href="#">Conditions d'utilisation</a>
+          <a href="#">mentions légales</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Minute Media — Tous droits réservés. Le contenu de ce site est destiné au divertissement et à l'information.</p>
+    </div>
+  </footer>
+
+  <script src="./script/script.js"></script>
+  <script defer src="./script/standings.js"></script>
+</body>
+</html>
