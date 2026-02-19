@@ -17,6 +17,10 @@ main {
   flex: 1;
 }
 
+/* ========================================
+   TOPBAR
+   ======================================== */
+
 .topbar {
   position: fixed;
   top: 0;
@@ -82,6 +86,10 @@ main {
   border-color: #555;
 }
 
+/* ========================================
+   BURGER BUTTON
+   ======================================== */
+
 .burger-btn {
   position: fixed;
   top: 70px;
@@ -97,6 +105,10 @@ main {
 .burger-btn.active i {
   color: white;
 }
+
+/* ========================================
+   SIDEBAR
+   ======================================== */
 
 .sidebar {
   position: fixed;
@@ -174,98 +186,9 @@ main {
   margin-left: auto;
 }
 
-.site-footer {
-  background-color: #4e2a84;
-  color: #fff;
-  font-size: 0.85rem;
-  width: 100%;
-  margin-top: auto;
-}
-
-.site-footer .footer-menu {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem 1rem;
-  border-top: 2px solid #d1a040;
-  border-bottom: 2px solid #d1a040;
-}
-
-.site-footer .fan-logo img {
-  height: 40px;
-  margin-bottom: 1rem;
-}
-
-.site-footer .columns {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-}
-
-.site-footer .col {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  text-align: center;
-}
-
-.site-footer .col a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s ease;
-}
-
-.site-footer .col a:hover {
-  color: #fcd34d;
-  text-decoration: underline;
-}
-
-.site-footer .footer-bottom {
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 1rem;
-  text-align: center;
-  font-size: 0.75rem;
-  line-height: 1.4;
-}
-
-.error-message {
-  display: none;
-  background: rgba(255, 0, 0, 0.2);
-  padding: 1rem;
-  border-radius: 8px;
-  margin: 1rem 0;
-  color: #ff6b6b;
-}
-
-.error-message.show {
-  display: block;
-}
-
-.loading-spinner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-.loading-spinner i {
-  font-size: 2rem;
-  color: #fcd34d;
-}
-
-.loading-spinner p {
-  margin: 0;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.main-content {
-  padding-top: 120px;
-  padding-left: 20px;
-  padding-right: 20px;
-  text-align: center;
-}
+/* ========================================
+   SETTINGS DROPDOWN
+   ======================================== */
 
 .settings-dropdown {
   position: relative;
@@ -343,6 +266,17 @@ main {
   color: #fdb927;
 }
 
+/* Statut utilisateur connecté */
+.dropdown-item.user-status {
+  color: #4CAF50;
+  cursor: default;
+}
+
+.dropdown-item.user-status:hover {
+  background: transparent;
+  color: #4CAF50;
+}
+
 .dropdown-item i {
   font-size: 18px;
   width: 20px;
@@ -360,18 +294,110 @@ main {
   color: #fdb927;
 }
 
-body.dark-mode {
-  background-color: #0a0a0a;
-  color: #f5f5f5;
+/* ========================================
+   FOOTER
+   ======================================== */
+
+.site-footer {
+  background-color: #4e2a84;
+  color: #fff;
+  font-size: 0.85rem;
+  width: 100%;
+  margin-top: auto;
 }
 
-body.dark-mode .topbar {
-  background: linear-gradient(to bottom, #000, #111);
+.site-footer .footer-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  border-top: 2px solid #d1a040;
+  border-bottom: 2px solid #d1a040;
 }
 
-body.dark-mode .news-section {
-  background: linear-gradient(180deg, rgba(10, 10, 20, 0.98) 0%, rgba(5, 5, 15, 1) 100%);
+.site-footer .fan-logo img {
+  height: 40px;
+  margin-bottom: 1rem;
 }
+
+.site-footer .columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.site-footer .col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.site-footer .col a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.site-footer .col a:hover {
+  color: #fcd34d;
+  text-decoration: underline;
+}
+
+.site-footer .footer-bottom {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+/* ========================================
+   UTILITIES
+   ======================================== */
+
+.error-message {
+  display: none;
+  background: rgba(255, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  color: #ff6b6b;
+}
+
+.error-message.show {
+  display: block;
+}
+
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.loading-spinner i {
+  font-size: 2rem;
+  color: #fcd34d;
+}
+
+.loading-spinner p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.main-content {
+  padding-top: 120px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
 
 @media (max-width: 768px) {
   .dropdown-menu {

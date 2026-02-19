@@ -38,14 +38,14 @@
         </button>
         
         <div class="dropdown-menu">
-          <button class="dropdown-item theme-toggle" data-theme="dark">
-            <i class="fa-solid fa-moon"></i>
-            <span>Mode sombre</span>
-          </button>
-          <button class="dropdown-item theme-toggle" data-theme="light">
-            <i class="fa-solid fa-sun"></i>
-            <span>Mode clair</span>
-          </button>
+          <a href="inscription.html" class="dropdown-item">
+            <i class="fa-solid fa-user-plus"></i>
+            <span>S'inscrire</span>
+          </a>
+          <a href="connexion.html" class="dropdown-item">
+            <i class="fa-solid fa-right-to-bracket"></i>
+            <span>Se connecter</span>
+          </a>
           <div class="dropdown-divider"></div>
           <a href="contact.html" class="dropdown-item">
             <i class="fa-solid fa-envelope"></i>
@@ -56,12 +56,12 @@
     </div>
   </header>
 
-  <button class="burger-btn">
+  <button class="burger-btn" aria-label="Ouvrir le menu">
     <i class="fa-regular fa-bars"></i>
   </button>
 
-  <aside class="sidebar">
-    <button class="close-btn">
+  <aside class="sidebar" aria-label="Navigation latérale">
+    <button class="close-btn" aria-label="Fermer le menu">
       <i class="fa-solid fa-xmark"></i>
     </button>
     <nav class="nav">
@@ -83,118 +83,112 @@
   <main class="contact-main">
     <div class="contact-container">
       
+      <!-- Header -->
       <div class="contact-header">
-        <h1>
+        <div class="contact-icon">
           <i class="fa-solid fa-envelope"></i>
-          Contacte-moi
-        </h1>
-        <p>Une question ? Une suggestion ? Envoyez-nous un message !</p>
+        </div>
+        <h1>Contacte moi</h1>
       </div>
 
-      <div class="contact-content">
+      <!-- Formulaire -->
+      <div class="contact-form-card">
+        <h2>Formulaire de contact</h2>
         
-        <div class="contact-form-card">
-          <h2>Formulaire de contact</h2>
+        <form class="contact-form" id="contactForm">
           
-          <form class="contact-form" id="contactForm">
-            
-            <div class="form-group">
-              <label for="name">
-                <i class="fa-solid fa-user"></i>
-                Nom complet
-              </label>
-              <input type="text" id="name" name="name" placeholder="Votre nom" required>
-            </div>
+          <div class="form-group">
+            <input type="text" id="name" name="name" placeholder="entre ton nom" required>
+          </div>
 
-            <div class="form-group">
-              <label for="email">
-                <i class="fa-solid fa-envelope"></i>
-                Email
-              </label>
-              <input type="email" id="email" name="email" placeholder="votre@email.com" required>
-            </div>
+          <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="email" required>
+          </div>
 
-            <div class="form-group">
-              <label for="subject">
-                <i class="fa-solid fa-tag"></i>
-                Sujet
-              </label>
-              <select id="subject" name="subject" required>
-                <option value="">Choisir un sujet</option>
-                <option value="question">Question générale</option>
-                <option value="suggestion">Suggestion</option>
-                <option value="bug">Signaler un bug</option>
-                <option value="autre">Autre</option>
-              </select>
-            </div>
+          <div class="form-group">
+            <select id="subject" name="subject" required>
+              <option value="" disabled selected>choisir un sujet</option>
+              <option value="question">Question générale</option>
+              <option value="suggestion">Suggestion</option>
+              <option value="bug">Signaler un bug</option>
+              <option value="partenariat">Partenariat</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
 
-            <div class="form-group">
-              <label for="message">
-                <i class="fa-solid fa-comment"></i>
-                Message
-              </label>
-              <textarea id="message" name="message" rows="6" placeholder="Votre message..." required></textarea>
-            </div>
+          <div class="form-group">
+            <textarea id="message" name="message" rows="5" placeholder="message" required></textarea>
+          </div>
 
-            <button type="submit" class="submit-btn">
-              <i class="fa-solid fa-paper-plane"></i>
-              Envoyer le message
-            </button>
-          </form>
+          <button type="submit" class="submit-btn">
+            <i class="fa-solid fa-paper-plane"></i>
+            Envoyer le message
+          </button>
+        </form>
 
-          <div class="form-success" id="successMessage">
+        <!-- Message de succès -->
+        <div class="form-success" id="successMessage">
+          <div class="success-icon">
             <i class="fa-solid fa-circle-check"></i>
-            <p>Merci ! Votre message a été envoyé avec succès.</p>
           </div>
+          <p>Merci ! Votre message a été envoyé avec succès.</p>
+          <a href="index.html" class="btn-back-home">Retourner à la page d'accueil</a>
         </div>
-
-        <div class="contact-info-card">
-          <h2>Informations</h2>
-          
-          <div class="info-item">
-            <i class="fa-solid fa-envelope"></i>
-            <div>
-              <h3>Email</h3>
-              <p>dybrilboudiaf14@gmail.com</p>
-            </div>
-          </div>
-
-          <div class="info-item">
-            <i class="fa-solid fa-phone"></i>
-            <div>
-              <h3>Téléphone</h3>
-              <p>+33 6 27 96 27 35</p>
-            </div>
-          </div>
-
-          <div class="info-item">
-            <i class="fa-solid fa-location-dot"></i>
-            <div>
-              <h3>Adresse</h3>
-              <p>62 avenue du merlan<br>13014 Marseille, France</p>
-            </div>
-          </div>
-
-          <div class="social-links">
-            <h3>Suis-moi</h3>
-            <div class="social-icons">
-              <a href="#" class="social-icon">
-                <i class="fa-brands fa-twitter"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fa-brands fa-instagram"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fa-brands fa-facebook"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fa-brands fa-youtube"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
       </div>
+
+      <!-- Informations -->
+      <div class="contact-info-card">
+        <h2>Informations</h2>
+        
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+          <div class="info-content">
+            <h3>email</h3>
+            <p>dybrilboudiaf14@gmail.com</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+          <div class="info-content">
+            <h3>Téléphone</h3>
+            <p>0627962735</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <div class="info-content">
+            <h3>Adresse</h3>
+            <p>62 avenue du merlan<br>13014 Marseille, France</p>
+          </div>
+        </div>
+
+        <div class="social-section">
+          <h3>Suis moi</h3>
+          <div class="social-icons">
+            <a href="#" class="social-icon" aria-label="Twitter">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="#" class="social-icon" aria-label="YouTube">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a href="#" class="social-icon" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#" class="social-icon" aria-label="Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </main>
 

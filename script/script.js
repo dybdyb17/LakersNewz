@@ -2,15 +2,147 @@ const burgerBtn = document.querySelector('.burger-btn');
 const sidebar = document.querySelector('.sidebar');
 const closeBtn = document.querySelector('.close-btn');
 
-burgerBtn.addEventListener('click', () => {
-  sidebar.classList.add('open');
-  burgerBtn.classList.add('active');
+if (burgerBtn && sidebar) {
+  burgerBtn.addEventListener('click', () => {
+    sidebar.classList.add('open');
+    burgerBtn.classList.add('active');
+  });
+}
+
+if (closeBtn && sidebar) {
+  closeBtn.addEventListener('click', () => {
+    sidebar.classList.remove('open');
+    burgerBtn.classList.remove('active');
+  });
+}
+
+
+const settingsDropdown = document.querySelector('.settings-dropdown');
+const settingsBtn = document.querySelector('.settings-btn');
+const dropdownMenu = document.querySelector('.dropdown-menu');
+
+if (settingsBtn && settingsDropdown) {
+  settingsBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    settingsDropdown.classList.toggle('active');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!settingsDropdown.contains(e.target)) {
+      settingsDropdown.classList.remove('active');
+    }
+  });
+
+  if (dropdownMenu) {
+    dropdownMenu.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+  }
+}
+
+
+function updateDropdownMenu() {
+  const dropdownMenu = document.querySelector('.dropdown-menu');
+  if (!dropdownMenu) return;
+
+  const session = JSON.parse(localStorage.getItem('lakersNewzSession')) || 
+                  JSON.parse(sessionStorage.getItem('lakersNewzSession'));
+  
+  const isLoggedIn = session && session.isLoggedIn;
+
+  if (isLoggedIn) {
+    dropdownMenu.innerHTML = `
+      <div class="dropdown-item user-status">
+        <i class="fa-solid fa-circle-check"></i>
+        <span>Vous êtes connecté</span>
+      </div>
+      <button class="dropdown-item" onclick="logout()">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        <span>Se déconnecter</span>
+      </button>
+      <div class="dropdown-divider"></div>
+      <a href="contact.html" class="dropdown-item">
+        <i class="fa-solid fa-envelope"></i>
+        <span>Contact</span>
+      </a>
+    `;
+  } else {
+    dropdownMenu.innerHTML = `
+      <a href="inscription.html" class="dropdown-item">
+        <i class="fa-solid fa-user-plus"></i>
+        <span>S'inscrire</span>
+      </a>
+      <a href="connexion.html" class="dropdown-item">
+        <i class="fa-solid fa-right-to-bracket"></i>
+        <span>Se connecter</span>
+      </a>
+      <div class="dropdown-divider"></div>
+      <a href="contact.html" class="dropdown-item">
+        <i class="fa-solid fa-envelope"></i>
+        <span>Contact</span>
+      </a>
+    `;
+  }
+}
+
+function logout() {
+  localStorage.removeItem('lakersNewzSession');
+  sessionStorage.removeItem('lakersNewzSession');
+  updateDropdownMenu();
+  window.location.href = 'index.html';
+}
+
+function updateSidebar() {
+  const navList = document.querySelector('.sidebar .nav ul');
+  if (!navList) return;
+
+  const session = JSON.parse(localStorage.getItem('lakersNewzSession')) || 
+                  JSON.parse(sessionStorage.getItem('lakersNewzSession'));
+  
+  const isLoggedIn = session && session.isLoggedIn;
+
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+
+  if (isLoggedIn) {
+    navList.innerHTML = `
+      <li><a href="index.html" class="${currentPage === 'index.html' ? 'active' : ''}"><i class="fa-solid fa-basketball"></i>News</a></li>
+      <li><a href="calendrier.html" class="${currentPage === 'calendrier.html' ? 'active' : ''}"><i class="fa-solid fa-calendar"></i>Calendrier</a></li>
+      <li><a href="classement.html" class="${currentPage === 'classement.html' ? 'active' : ''}"><i class="fa-solid fa-ranking-star"></i>Classement</a></li>
+      <li><a href="roster.html" class="${currentPage === 'roster.html' ? 'active' : ''}"><i class="fa-solid fa-star"></i>Roster</a></li>
+      <li><a href="paris.html" class="${currentPage === 'paris.html' ? 'active' : ''}"><i class="fa-solid fa-dice"></i>Paris</a></li>
+    `;
+  } else {
+    navList.innerHTML = `
+      <li><a href="index.html" class="${currentPage === 'index.html' ? 'active' : ''}"><i class="fa-solid fa-basketball"></i>News</a></li>
+      <li><a href="calendrier.html" class="${currentPage === 'calendrier.html' ? 'active' : ''}"><i class="fa-solid fa-calendar"></i>Calendrier</a></li>
+      <li><a href="classement.html" class="${currentPage === 'classement.html' ? 'active' : ''}"><i class="fa-solid fa-ranking-star"></i>Classement</a></li>
+      <li><a href="roster.html" class="${currentPage === 'roster.html' ? 'active' : ''}"><i class="fa-solid fa-star"></i>Roster</a></li>
+    `;
+  }
+}
+
+function checkParisAccess() {
+  const currentPage = window.location.pathname.split('/').pop();
+  
+  if (currentPage === 'paris.html') {
+    const session = JSON.parse(localStorage.getItem('lakersNewzSession')) || 
+                    JSON.parse(sessionStorage.getItem('lakersNewzSession'));
+    
+    const isLoggedIn = session && session.isLoggedIn;
+    
+    if (!isLoggedIn) {
+      alert('Vous devez être connecté pour accéder aux paris !');
+      window.location.href = 'connexion.html';
+    }
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  updateDropdownMenu();
+  updateSidebar();
+  checkParisAccess();
 });
 
-closeBtn.addEventListener('click', () => {
-  sidebar.classList.remove('open');
-  burgerBtn.classList.remove('active');
-});
 
 function normalize(text) {
   return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
@@ -113,53 +245,5 @@ document.addEventListener('DOMContentLoaded', () => {
         displayMatches(filtered);
       });
     }
-  }
-});
-
-const settingsDropdown = document.querySelector('.settings-dropdown');
-const settingsBtn = document.querySelector('.settings-btn');
-const dropdownMenu = document.querySelector('.dropdown-menu');
-
-if (settingsBtn && settingsDropdown) {
-  settingsBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    settingsDropdown.classList.toggle('active');
-  });
-
-  document.addEventListener('click', (e) => {
-    if (!settingsDropdown.contains(e.target)) {
-      settingsDropdown.classList.remove('active');
-    }
-  });
-
-  if (dropdownMenu) {
-    dropdownMenu.addEventListener('click', (e) => {
-      e.stopPropagation();
-    });
-  }
-}
-
-const themeToggles = document.querySelectorAll('.theme-toggle');
-
-themeToggles.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const theme = btn.dataset.theme;
-    
-    if (theme === 'dark') {
-      document.body.classList.add('dark-mode');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.body.classList.remove('dark-mode');
-      localStorage.setItem('theme', 'light');
-    }
-    
-    settingsDropdown.classList.remove('active');
-  });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'dark') {
-    document.body.classList.add('dark-mode');
   }
 });

@@ -3,40 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lakers News</title>
+  <title>Se connecter - Lakers Newz</title>
   <link href="./assets/fonts/fontawesome/css/fontawesome.min.css" rel="stylesheet">
   <link href="./assets/fonts/fontawesome/css/brands.min.css" rel="stylesheet">
   <link href="./assets/fonts/fontawesome/css/solid.css" rel="stylesheet">
   <link href="./assets/fonts/fontawesome/css/solid.min.css" rel="stylesheet">
   <link rel="shortcut icon" href="./assets/icons/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="./css/styles.css">
-  <link rel="stylesheet" href="./css/schedule.css">
+  <link rel="stylesheet" href="./css/auth.css">
 </head>
-<body class="calendrier-page">
-  
+<body class="auth-page connexion-page">
+
   <header class="topbar">
     <div class="top-links">
       <a href="https://www.ticketmaster.com/los-angeles-lakers-tickets/artist/805962" class="btn btn-gold">Billeterie</a>
       <a href="https://www.nbastore.eu/fr/los-angeles-lakers/t-25031846+z-9030758-2040509788" class="btn btn-purple">#Boutique</a>
       <a href="https://www.youtube.com/c/LakeShowHighlights" class="btn btn-black">#Lakeshow</a>
     </div>
-
     <div class="top-logo">
       <a href="index.html">
         <img src="./assets/img/fontbolt.png" width="130" height="40" alt="Lakers Newz">
       </a>
     </div>
-
     <div class="top-actions">
       <button class="search-btn" aria-label="Rechercher">
         <i class="fa-solid fa-magnifying-glass"></i>
       </button>
-      
       <div class="settings-dropdown">
         <button class="settings-btn" aria-label="Réglages">
           <i class="fa-solid fa-gear"></i>
         </button>
-        
         <div class="dropdown-menu">
           <a href="inscription.html" class="dropdown-item">
             <i class="fa-solid fa-user-plus"></i>
@@ -56,18 +52,18 @@
     </div>
   </header>
 
-  <button class="burger-btn" aria-label="Ouvrir le menu">
+  <button class="burger-btn">
     <i class="fa-regular fa-bars"></i>
   </button>
 
-  <aside class="sidebar" aria-label="Navigation latérale">
-    <button class="close-btn" aria-label="Fermer le menu">
+  <aside class="sidebar">
+    <button class="close-btn">
       <i class="fa-solid fa-xmark"></i>
     </button>
     <nav class="nav">
       <ul>
         <li><a href="index.html"><i class="fa-solid fa-basketball"></i>News</a></li>
-        <li><a class="active" href="calendrier.html"><i class="fa-solid fa-calendar"></i>Calendrier</a></li>
+        <li><a href="calendrier.html"><i class="fa-solid fa-calendar"></i>Calendrier</a></li>
         <li><a href="classement.html"><i class="fa-solid fa-ranking-star"></i>Classement</a></li>
         <li><a href="roster.html"><i class="fa-solid fa-star"></i>Roster</a></li>
         <li><a href="paris.html"><i class="fa-solid fa-dice"></i>Paris</a></li>
@@ -80,55 +76,47 @@
     </div>
   </aside>
 
-  <main class="calendar-main">
-    <section class="calendar-hero">
-      <div class="calendar-hero__overlay">
-        <span class="calendar-hero__label"><i class="fa-solid fa-calendar"></i> Calendrier NBA</span>
-        <h1>Lakers 2025/2026</h1>
-        <p>Retrouver les 82 matchs de la saison régulière des Los Angeles Lakers.</p>
-      </div>
-    </section>
-
-    <section class="calendar-card">
-      <header class="calendar-card__header">
-        <div>
-          <h2>Programme de la saison</h2>
-          <p class="calendar-card__subtitle">Du 22 octobre 2025 au 13 avril 2026</p>
+  <main class="auth-main">
+    <div class="auth-left">
+      <div class="auth-card connexion-card">
+        <div class="auth-header">
+          <h1>Se connecter</h1>
+          <p>Entre ton adresse mail et mot de passe</p>
         </div>
-        <div class="calendar-filters" aria-label="Filtres du calendrier">
-          <label class="filter">
-            <span>Mois</span>
-            <select name="month" id="month-filter">
-              <option value="all">Tous</option>
-              <option value="octobre">Octobre</option>
-              <option value="novembre">Novembre</option>
-              <option value="decembre">Décembre</option>
-              <option value="janvier">Janvier</option>
-              <option value="fevrier">Février</option>
-              <option value="mars">Mars</option>
-              <option value="avril">Avril</option>
-            </select>
-          </label>
+        <form class="auth-form" id="connexionForm">
+          <div class="form-group">
+            <label for="email">Adresse e-mail</label>
+            <input type="email" id="email" name="email" placeholder="Entre ton adresse mail" required>
+          </div>
+          <div class="form-group">
+            <div class="label-row">
+              <label for="password">Mot de passe</label>
+              <a href="#" class="forgot-password">mot de passe oublié?</a>
+            </div>
+            <div class="password-wrapper">
+              <input type="password" id="password" name="password" placeholder="••••••••••" required>
+              <button type="button" class="toggle-password" aria-label="Afficher le mot de passe">
+                <i class="fa-solid fa-eye-slash"></i>
+              </button>
+            </div>
+          </div>
+          <div class="form-checkboxes">
+            <label class="checkbox-wrapper">
+              <input type="checkbox" id="remember" name="remember">
+              <span class="checkmark"></span>
+              <span class="checkbox-label">Me souvenir</span>
+            </label>
+          </div>
+          <button type="submit" class="auth-btn">Se connecter</button>
+        </form>
+        <div class="auth-footer">
+          <p>Pas de compte ? <a href="inscription.html">Inscris toi</a></p>
         </div>
-      </header>
-
-      <div class="calendar-table__wrapper">
-        <table class="calendar-table">
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Heure (PT)</th>
-              <th>Adversaire</th>
-              <th>Lieu</th>
-              <th>Résultat</th>
-            </tr>
-          </thead>
-          <tbody>
-        
-          </tbody>
-        </table>
       </div>
-    </section>
+    </div>
+    <div class="auth-right">
+      <img src="./assets/img/dean-bennett-nFjLHE4vmn4-unsplash.jpg" alt="Kobe Bryant Mural" class="auth-image">
+    </div>
   </main>
 
   <footer class="site-footer">
@@ -160,13 +148,12 @@
         </div>
       </div>
     </div>
-
     <div class="footer-bottom">
       <p>© 2025 Minute Media — Tous droits réservés. Le contenu de ce site est destiné au divertissement et à l'information.</p>
     </div>
   </footer>
 
   <script src="./script/script.js"></script>
-  
+  <script src="./script/auth.js"></script>
 </body>
 </html>
