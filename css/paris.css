@@ -528,13 +528,10 @@ body.paris-page .burger-btn.active {
 
 .parier-main-btn:hover { background: #e5a620; }
 
-/* ========================================
-   MES PARIS OVERLAY
-   ======================================== */
 .mes-paris-overlay {
   position: fixed;
   inset: 0;
-  background: #FDB927;
+  background: url(../assets/img/lakersgold.jpg) center/cover fixed no-repeat;
   z-index: 3000;
   overflow-y: auto;
 }
