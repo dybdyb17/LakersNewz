@@ -17,10 +17,6 @@ main {
   flex: 1;
 }
 
-/* ========================================
-   TOPBAR
-   ======================================== */
-
 .topbar {
   position: fixed;
   top: 0;
@@ -86,10 +82,6 @@ main {
   border-color: #555;
 }
 
-/* ========================================
-   BURGER BUTTON
-   ======================================== */
-
 .burger-btn {
   position: fixed;
   top: 70px;
@@ -105,10 +97,6 @@ main {
 .burger-btn.active i {
   color: white;
 }
-
-/* ========================================
-   SIDEBAR
-   ======================================== */
 
 .sidebar {
   position: fixed;
@@ -186,10 +174,6 @@ main {
   margin-left: auto;
 }
 
-/* ========================================
-   SETTINGS DROPDOWN
-   ======================================== */
-
 .settings-dropdown {
   position: relative;
 }
@@ -266,7 +250,6 @@ main {
   color: #fdb927;
 }
 
-/* Statut utilisateur connecté */
 .dropdown-item.user-status {
   color: #4CAF50;
   cursor: default;
@@ -293,10 +276,6 @@ main {
   border-color: #fdb927;
   color: #fdb927;
 }
-
-/* ========================================
-   FOOTER
-   ======================================== */
 
 .site-footer {
   background-color: #4e2a84;
@@ -354,10 +333,6 @@ main {
   line-height: 1.4;
 }
 
-/* ========================================
-   UTILITIES
-   ======================================== */
-
 .error-message {
   display: none;
   background: rgba(255, 0, 0, 0.2);
@@ -394,10 +369,6 @@ main {
   padding-right: 20px;
   text-align: center;
 }
-
-/* ========================================
-   RESPONSIVE
-   ======================================== */
 
 @media (max-width: 768px) {
   .dropdown-menu {
